@@ -3,6 +3,7 @@ import { Platform } from "react-native";
 export enum SCREENSTYPES {
     AuthNav = "AuthNav",
     Onboarding = "Onboarding",
+    Home = "Home",
 }
 
 export const SCREENS: {[key in SCREENSTYPES]: any} = {
