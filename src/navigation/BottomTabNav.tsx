@@ -5,14 +5,8 @@ import { SCREENS } from "../../shared/constants";
 import { RootTabParamList } from "../../shared/types";
 import { useAppSelector } from "../../store/hooks";
 import theme from "../components/Theme";
-import UserImage from "../components/UserImage";
-import HomeIcon from "../svg/BottomTab/HomeIcon";
-import MoreIcon from "../svg/BottomTab/MoreIcon";
-import ReceiptsIcon from "../svg/BottomTab/ReceiptsIcon";
-import DashboardNav from "./DashboardNav";
-import MoreNav from "./MoreNav";
-import ProfileNav from "./ProfileNav";
-import ReceiptsNav from "./ReceiptsNav";
+import AuthNav from "./AuthNav";
+
 
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
@@ -34,12 +28,12 @@ function BottomTabNav(): JSX.Element {
             }}
         >
             <Tab.Screen
-                name={SCREENS.DashboardNav}
-                component={DashboardNav}
+                name={SCREENS.AuthNav}
+                component={AuthNav}
                 options={() => ({
                     title: `${t("Home")}`,
                     tabBarShowLabel: true,
-                    tabBarIcon: ({ color }) => <HomeIcon stroke={color} />,
+                    // tabBarIcon: ({ color }) => <HomeIcon stroke={color} />,
                 })}
                 listeners={() => ({
                     tabPress: () =>
@@ -48,12 +42,12 @@ function BottomTabNav(): JSX.Element {
             />
 
             <Tab.Screen
-                name={SCREENS.ReceiptsNav}
-                component={ReceiptsNav}
+                name={SCREENS.AuthNav}
+                component={AuthNav}
                 options={() => ({
                     title: `${t("Receipts")}`,
                     tabBarShowLabel: true,
-                    tabBarIcon: ({ color }) => <ReceiptsIcon stroke={color} />,
+                    // tabBarIcon: ({ color }) => <ReceiptsIcon stroke={color} />,
                 })}
                 listeners={() => ({
                     tabPress: () =>
@@ -62,20 +56,12 @@ function BottomTabNav(): JSX.Element {
             />
 
             <Tab.Screen
-                name={SCREENS.ProfileNav}
-                component={ProfileNav}
+                name={SCREENS.AuthNav}
+                component={AuthNav}
                 options={() => ({
                     title: `${t("Profile")}`,
                     tabBarShowLabel: true,
-                    tabBarIcon: ({ color }) =>
-                        <UserImage
-                            imageUrl={
-                                // userInfo?.profile_pic
-                                //     ? { uri: userInfo?.profile_pic }
-                                //     : undefined
-                                undefined
-                            }
-                        />,
+                    // tabBarIcon: ({ color }) => <ReceiptsIcon stroke={color} />,
                 })}
                 listeners={() => ({
                     tabPress: () =>
@@ -84,12 +70,12 @@ function BottomTabNav(): JSX.Element {
             />
 
             <Tab.Screen
-                name={SCREENS.MoreNav}
-                component={MoreNav}
+                name={SCREENS.AuthNav}
+                component={AuthNav}
                 options={() => ({
                     title: `${t("More")}`,
                     tabBarShowLabel: true,
-                    tabBarIcon: ({ color }) => <MoreIcon stroke={color} />,
+                    // tabBarIcon: ({ color }) => <MoreIcon stroke={color} />,
                 })}
                 listeners={() => ({
                     tabPress: () =>
@@ -101,12 +87,3 @@ function BottomTabNav(): JSX.Element {
 }
 
 export default BottomTabNav;
-
-
-{/* <UserImage
-imageUrl={
-  userInfo?.profile_pic
-    ? { uri: userInfo?.profile_pic }
-    : undefined
-}
-/> */}

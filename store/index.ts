@@ -3,7 +3,7 @@ import { persistStore } from "redux-persist";
 import globalReducer from "./global";
 import authReducer from "./auth/index";
 
-const store = configureStore({
+const store: any = configureStore({
   reducer: {
     global: globalReducer,
     auth: authReducer,

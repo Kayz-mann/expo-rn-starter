@@ -6,7 +6,6 @@ import {
     TouchableOpacity,
 } from "react-native";
 import { widthPercentageToDP as wp } from "react-native-responsive-screen";
-import ClosedEyeIcon from "../svg/ClosedEyeIcon";
 import { Entypo } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 
@@ -82,7 +81,7 @@ const TextInput: FC<InputFieldProps> = ({
                         {visible ? (
                             <Entypo name="eye" size={17} color={theme.colors.gray} />
                         ) : (
-                            <ClosedEyeIcon />
+                            <Entypo name="eye" size={17} color={theme.colors.gray} />
                         )}
                     </TouchableOpacity>
                 )}
