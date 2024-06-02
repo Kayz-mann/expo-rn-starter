@@ -17,10 +17,7 @@ Screen extends keyof RootStackParamList
 > = NativeStackScreenProps<RootStackParamList, Screen>;
 
 export type RootTabParamList = {
-    DashboardNav: undefined;
-    ReceiptsNav: undefined;
-    ProfileNav: undefined;
-    MoreNav: undefined;
+    HomeNav: undefined
 }
 
 export type RootTabScreenProps<

@@ -14,6 +14,8 @@ export interface FormInputProps extends InputFieldProps {
   name: string;
   resizable?: boolean;
   minHeight?: number;
+  hideError?: boolean;
+  inputRef?: any;
 }
 
 const FormInput = ({ control, name, ...rest }: FormInputProps) => {
@@ -22,6 +24,7 @@ const FormInput = ({ control, name, ...rest }: FormInputProps) => {
       control={control}
       render={({ field, fieldState }) => (
         <FormInputItem
+          inputRef={rest.inputRef}
           field={field}
           fieldState={fieldState}
           name={name}
@@ -60,15 +63,15 @@ export const FormInputItem = ({
         error={undefined}
         placeholderTextColor={rest.placeholderTextColor ?? theme.colors.gray}
       />
-      <View style={{ top: -10 }}>
+      <View style={{}}>
         <Text>
           {fieldState.error || rest?.error ? (
-            <Text style={{ color: theme.colors.orange }}>
+            <Text
+              style={{ color: theme.colors.orange, top: 4, marginBottom: 15 }}
+            >
               {fieldState.error?.message! ?? rest?.error}
             </Text>
-          ) : (
-            undefined
-          )}
+          ) : undefined}
         </Text>
       </View>
     </>

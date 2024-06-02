@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "expo-starter",
-    "slug": "expo-starter",
+    "name": "walletViewer",
+    "slug": "walletViewer",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,16 +15,29 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.kayzmann.walletViewer"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.kayzmann.walletViewer"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "9eb221ce-7b14-4f9b-b3a8-9b24d1f91e98"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/9eb221ce-7b14-4f9b-b3a8-9b24d1f91e98"
     }
   }
 }
